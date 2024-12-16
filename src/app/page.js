@@ -45,7 +45,7 @@ const Home = () => {
                   Redux, MongoDB, React. Fuerte dominio de Power BI para transformar datos complejos en visualizaciones efectivas.
                 </p>
                 <a
-                    href="/CVjesus.pdf"
+                    href="/CV jesus flores.pdf"
                     download
                     className="inline-block px-6 py-3 border-2 border-current rounded-full
                          hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
