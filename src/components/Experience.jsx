@@ -1,88 +1,123 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import { Card, CardContent } from "@/components/ui/card"
+import { Calendar, Briefcase, Code, Github, Layers } from "lucide-react"
+import { motion } from "framer-motion"
 
 export function Experience() {
-    const experiences = [
+    const jobs = [
         {
             company: "CONDORLAND S.A.C",
             position: "Practicante de Desarrollo Back-end",
-            date: "Agosto 2024 - Diciembre 2024",
-            details: [
-                "Creé una API con Node.js y Express para administración de usuarios y tareas.",
-                "Implementé autenticación segura utilizando JWT y bcrypt.",
-                "Integré Swagger para documentación interactiva de la API.",
-                "Gestioné base de datos MySQL para manipulación eficiente de datos.",
-                "Configuré políticas CORS y manejo de cookies para comunicación segura.",
-                "Utilicé Zod para validación robusta de datos en las solicitudes API."
-            ]
+            period: "Agosto 2024 - Diciembre 2024",
+            technologies: ["HTML", "CSS", "JavaScript", "MySQL", "Node.js", "Express.js"],
+            repository: "https://github.com/jafcthedevp/Backend-CL-SAC",
+            details: "Creé una API con Node.js y Express que permite la administración eficiente de usuarios y tareas.",
         },
         {
             company: "ECOIN HOLDING BUSINESS SOCIEDAD COMERCIAL DE RESPONSABILIDAD LIMITADA",
-            position: "Practicante de sistemas",
-            date: "Agosto 2023 - Diciembre 2023",
-            details: [
-                "Implementé funcionalidades en aplicación móvil para registro de tareas.",
-                "Optimicé el rendimiento y corregí errores en la aplicación.",
-                "Trabajé con JavaScript, React Native-expo, Express.js y MySQL."
-            ]
+            position: "Desarrollador android",
+            period: "Agosto 2023 - Diciembre 2023",
+            technologies: ["JavaScript", "React Native-expo", "Express.js", "MySQL"],
+            repository: "https://github.com/jafcthedevp/frontend",
+            details:
+                "Implementación de funcionalidades en la aplicación móvil para el registro de tareas, optimización del rendimiento y corrección de errores.",
         },
         {
             company: "UNIVERSIDAD NACIONAL DE INGENIERIA - Facultad de Ingenieria Mecatronica",
-            position: "Desarrollador android",
-            date: "Agosto 2022 - Marzo 2023",
-            details: [
-                "Desarrollé una aplicación web de gestión de proyectos con fases.",
-                "Integré bases de datos y manejé interfaces de usuario dinámicas.",
-                "Utilicé HTML, CSS, JavaScript, MySQL y PHP."
-            ]
-        }
-    ];
+            position: "Practicante de sistemas",
+            period: "Agosto 2022 - Marzo 2023",
+            technologies: ["HTML", "CSS", "JavaScript", "Supabase", "Shadcn", "React", "Nextjs"],
+            repository: "https://github.com/jafcthedevp/cine-nextjs",
+            details:
+                "Desarrollo de una aplicación web que consistía en un sistema de gestión de proyectos dividido en fases, incluyendo la integración de bases de datos y el manejo de interfaces de usuario dinámicas.",
+        },
+    ]
 
-    const [expandedExperiences, setExpandedExperiences] = useState({});
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    }
 
-    const toggleExperience = (index) => {
-        setExpandedExperiences(prev => ({
-            ...prev,
-            [index]: !prev[index]
-        }));
-    };
+    const item = {
+        hidden: { x: -20, opacity: 0 },
+        show: { x: 0, opacity: 1 },
+    }
 
     return (
-        <section id="experience" className="mb-24 scroll-mt-24">
-            <h2 className="text-3xl font-bold mb-8">Experience</h2>
-            <div className="space-y-6">
-                {experiences.map((exp, index) => (
-                    <div key={index} className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 transition-all duration-300 ease-in-out">
-                        <h3 className="text-xl font-bold mb-2">{exp.company}</h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-4">{exp.position} | {exp.date}</p>
-                        {expandedExperiences[index] ? (
-                            <>
-                                <ul className="list-disc list-inside space-y-2 mb-4">
-                                    {exp.details.map((detail, idx) => (
-                                        <li key={idx}>{detail}</li>
-                                    ))}
-                                </ul>
-                                <button
-                                    onClick={() => toggleExperience(index)}
-                                    className="flex items-center text-blue-500 hover:text-blue-600 transition-colors duration-200"
-                                >
-                                    Mostrar menos <ChevronUp className="ml-1 w-4 h-4" />
-                                </button>
-                            </>
-                        ) : (
-                            <button
-                                onClick={() => toggleExperience(index)}
-                                className="flex items-center text-blue-500 hover:text-blue-600 transition-colors duration-200"
-                            >
-                                Mostrar más <ChevronDown className="ml-1 w-4 h-4" />
-                            </button>
-                        )}
-                    </div>
-                ))}
+        <section>
+            <div className="flex items-center gap-4 mb-8" id="experiencia-title">
+                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-secondary-500 to-primary-500 flex items-center justify-center text-white">
+                    <Layers className="h-6 w-6" />
+                </div>
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-secondary-600 to-primary-600 text-transparent bg-clip-text">
+                    EXPERIENCIA LABORAL
+                </h2>
             </div>
+
+            <motion.div
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="space-y-8"
+            >
+                {jobs.map((job, index) => (
+                    <motion.div key={index} variants={item}>
+                        <Card className="experience-card card-hover border border-gray-100 dark:border-gray-700 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm overflow-hidden">
+                            <CardContent className="p-6 pl-8">
+                                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                    <h3 className="text-xl font-bold text-primary-700 dark:text-primary-400">{job.position}</h3>
+                                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full mt-2 md:mt-0">
+                                        <Calendar className="h-4 w-4" />
+                                        <span className="text-sm font-medium">{job.period}</span>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center gap-2 mb-3">
+                                    <Briefcase className="h-5 w-5 text-secondary-600 dark:text-secondary-400" />
+                                    <span className="text-gray-800 dark:text-gray-200 font-medium">{job.company}</span>
+                                </div>
+
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    <Code className="h-5 w-5 text-accent-600 dark:text-accent-400 mr-1" />
+                                    {job.technologies.map((tech, idx) => (
+                                        <span
+                                            key={idx}
+                                            className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                                        >
+                      {tech}
+                    </span>
+                                    ))}
+                                </div>
+
+                                {job.repository && (
+                                    <div className="flex items-center gap-2 mb-4">
+                                        <Github className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                                        <a
+                                            href={job.repository}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 hover:underline text-sm font-medium transition-colors"
+                                        >
+                                            {job.repository}
+                                        </a>
+                                    </div>
+                                )}
+
+                                <p className="text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg border-l-4 border-primary-500">
+                                    {job.details}
+                                </p>
+                            </CardContent>
+                        </Card>
+                    </motion.div>
+                ))}
+            </motion.div>
         </section>
     )
 }
-

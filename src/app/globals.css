@@ -2,23 +2,132 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .animate-spin-slow {
-    animation: spin 8s linear infinite;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 262.1 83.3% 57.8%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.5% 48%;
   }
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
+@layer base {
+  * {
+    @apply border-border;
   }
-  to {
-    transform: rotate(360deg);
+
+  /* Nuevo gradiente de fondo */
+  body {
+    @apply min-h-screen;
+    background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.3), transparent 40%),
+    radial-gradient(circle at top right, rgba(139, 92, 246, 0.25), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.25), transparent 40%),
+    linear-gradient(to bottom, #f0f4f8, #e5e9f0);
+  }
+
+  /* Gradiente para modo oscuro */
+  .dark body {
+    background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.35), transparent 40%),
+    radial-gradient(circle at top right, rgba(139, 92, 246, 0.3), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.3), transparent 40%),
+    linear-gradient(to bottom, #0a1122, #162032);
+  }
+
+  /* Scroll suave para toda la página */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Ajuste para la navbar fija */
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer components {
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .gradient-border {
+    @apply relative before:absolute before:inset-0 before:p-[2px] before:rounded-xl before:bg-gradient-to-r before:from-primary-500 before:via-accent-500 before:to-secondary-500 before:-z-10;
+  }
+
+  .skill-icon {
+    @apply bg-gradient-to-br from-primary-100 to-primary-200 text-primary-600 p-3 rounded-lg shadow-sm;
+  }
+
+  .experience-card {
+    @apply relative overflow-hidden;
+  }
 }
 
+/* Corregido: Separando el pseudo-elemento ::before de la clase experience-card */
+.experience-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to));
+  --tw-gradient-from: #3b82f6;
+  --tw-gradient-via: #8b5cf6;
+  --tw-gradient-to: #10b981;
+}
 
+/* Añadir un efecto de patrón sutil al fondo */
+.bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
