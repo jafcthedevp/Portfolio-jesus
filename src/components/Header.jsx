@@ -15,9 +15,7 @@ export function Header() {
             <CardContent className="p-6 md:p-8">
                 <div className="flex flex-col md:flex-row gap-6 items-start">
                     <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary-400 via-accent-400 to-secondary-400 p-[3px] flex items-center justify-center text-white overflow-hidden shadow-lg">
-                        {/* Contenedor para la imagen con borde de gradiente */}
                         <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-white dark:bg-gray-800">
-                            {/* Puedes reemplazar el placeholder con tu imagen real */}
                             <Image
                                 src="/jesus.svg?height=128&width=128"
                                 alt="Jesus Anthony Flores Condori"
@@ -26,9 +24,6 @@ export function Header() {
                                 className="w-full h-full object-cover"
                                 priority
                             />
-
-                            {/* Comentado: Iniciales anteriores */}
-                            {/* <span className="text-4xl font-bold">JF</span> */}
                         </div>
                     </div>
 
