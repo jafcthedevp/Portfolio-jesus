@@ -67,7 +67,7 @@ export function Header() {
                                 </a>
                             </Button>
                             <Button variant="default" size="sm" className="gap-2 bg-secondary-500 hover:bg-secondary-600" asChild>
-                                <a href="/CV-jesus-flores.pdf" download="CV-Jesus-Flores-Condori.pdf">
+                                <a href="CVJesusFlores.pdf" download="CVJesusFlores.pdf">
                                     <Download size={16} />
                                     Descargar CV
                                 </a>
