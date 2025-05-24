@@ -15,6 +15,8 @@ export function Navbar() {
     { name: "Inicio", href: "#inicio" },
     { name: "Habilidades", href: "#habilidades" },
     { name: "Experiencia", href: "#experiencia" },
+    { name: "Proyectos", href: "#proyectos" },
+    { name: "Contáctame", href: "#contactame" },
     { name: "Contacto", href: "#contacto" },
   ]
 

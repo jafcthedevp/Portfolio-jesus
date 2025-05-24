@@ -1,0 +1,11 @@
+/* Custom style to make input and textarea backgrounds black */
+input,
+textarea {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #bbb !important;
+}

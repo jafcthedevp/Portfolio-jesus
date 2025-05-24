@@ -222,7 +222,7 @@ const projectsData = {
       "Aplicación web para la gestión de proyectos divididos en fases, con integración de bases de datos y manejo de interfaces de usuario dinámicas.",
     repository: "https://github.com/jafcthedevp/cine-nextjs",
     technologies: ["HTML", "CSS", "JavaScript", "Supabase", "Shadcn", "React", "Nextjs"],
-    images: ["/landingpage.png", "/login.png", "/register.png", "/perfil.png"],
+    images: ["/uni-screenshot-1.svg", "/uni-screenshot-2.svg", "/uni-screenshot-3.svg", "/uni-screenshot-4.svg"],
     liveDemo: "https://cine-nextjs.vercel.app/",
     isBackend: false,
   },
@@ -458,14 +458,14 @@ export default function ProjectPage() {
                 </a>
               </Button>
 
-              {/*{project.liveDemo && (
+              {project.liveDemo && (
                 <Button variant="outline" size="sm" className="gap-2" asChild>
                   <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
                     <ExternalLink size={16} />
                     Ver demo en vivo
                   </a>
                 </Button>
-              )} */}
+              )}
             </div>
 
             <SimpleTabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -475,7 +475,7 @@ export default function ProjectPage() {
                 <h2 className="text-xl font-semibold mb-4">Imágenes del proyecto</h2>
 
                 <div className="relative">
-                  <div className="aspect-video relative rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+                  <div className="aspect-video relative rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 bg-white">
                     <Image
                       src={project.images[currentImageIndex] || "/placeholder.svg"}
                       alt={`Captura de pantalla ${currentImageIndex + 1} del proyecto`}

@@ -99,7 +99,7 @@ export function ImageUpload({ onImageSelected }) {
                         onClick={() => fileInputRef.current?.click()}
                     >
                         <Upload className="mx-auto h-12 w-12 text-gray-400 dark:text-gray-600" />
-                        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">PNG, JPG o GIF (máx. 5MB)</p>
+                        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">WebP, JPG o GIF (máx. 5MB)</p>
                     </div>
                 )}
 
