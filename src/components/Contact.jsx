@@ -47,7 +47,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Teléfono</p>
-                                    <p className="font-semibold text-lg text-gray-800 dark:text-gray-200">+51 954-142-285</p>
+                                    <p className="font-semibold text-lg text-gray-800 dark:text-gray-200">+51 907-616-015</p>
                                 </div>
                             </motion.div>
 

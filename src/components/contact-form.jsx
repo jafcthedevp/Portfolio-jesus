@@ -137,7 +137,7 @@ export function ContactForm() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Teléfono:</p>
-                      <p className="text-gray-600 dark:text-gray-400">+51 954-142-285</p>
+                      <p className="text-gray-600 dark:text-gray-400">+51 907-616-015</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
