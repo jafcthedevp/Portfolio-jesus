@@ -6,7 +6,6 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
     title: "Portfolio - Jesus Anthony Flores Condori",
-    description: "Portfolio profesional de Jesus Anthony Flores Condori, Desarrollador de Software",
 }
 
 export default function RootLayout({ children }) {

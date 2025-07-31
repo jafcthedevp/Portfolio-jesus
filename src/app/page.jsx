@@ -11,7 +11,6 @@ import { ContactForm } from "@/components/contact-form"
 import { useEffect, useState } from "react"
 
 export default function Home() {
-  // Evitar problemas de hidratación
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -41,9 +40,6 @@ export default function Home() {
           </section>
           <section id="contactame">
             <ContactForm />
-          </section>
-          <section id="contacto">
-            <Contact />
           </section>
         </main>
         <Footer />

@@ -14,18 +14,7 @@ export function Header() {
         <Card className="border-none shadow-xl bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm">
             <CardContent className="p-6 md:p-8">
                 <div className="flex flex-col md:flex-row gap-6 items-start">
-                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary-400 via-accent-400 to-secondary-400 p-[3px] flex items-center justify-center text-white overflow-hidden shadow-lg">
-                        <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-white dark:bg-gray-800">
-                            <Image
-                                src="/jesus.svg?height=128&width=128"
-                                alt="Jesus Anthony Flores Condori"
-                                width={128}
-                                height={128}
-                                className="w-full h-full object-cover"
-                                priority
-                            />
-                        </div>
-                    </div>
+                    
 
                     <div className="flex-1">
                         <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 via-accent-600 to-secondary-600 text-transparent bg-clip-text">
@@ -39,10 +28,8 @@ export function Header() {
                             className="mt-4 text-gray-600 dark:text-gray-300 overflow-hidden relative"
                         >
                             <p>
-                                Busco trabajar con 2 años de experiencia desarrollando soluciones innovadoras y eficientes. Competente
-                                en JavaScript, Restful API, MySQL, Express.js, Redux, MongoDB, React. Fuerte dominio de Power BI.
-                                Habilidad para transformar datos complejos de bases de datos relacionales en modelos dimensionales para
-                                análisis detallados y visualización efectiva.
+                                Desarrollador de software con enfoque en crear soluciones funcionales y centradas en el usuario. Me apasiona construir productos digitales que no solo cumplan con su propósito técnico, sino que también brinden una experiencia clara, intuitiva y efectiva.
+A lo largo de mi formación y experiencia profesional, he trabajado en proyectos que van desde el diseño de interfaces hasta el desarrollo de sistemas backend completos, siempre con el objetivo de aportar valor real a los usuarios. Me motiva aprender constantemente, adaptarme a nuevos retos y colaborar con equipos comprometidos en construir productos de calidad.
                             </p>
                             {!expanded && (
                                 <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-gray-800 to-transparent"></div>
@@ -53,7 +40,7 @@ export function Header() {
                             variant="ghost"
                             size="sm"
                             onClick={() => setExpanded(!expanded)}
-                            className="mt-2 text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center gap-1"
+                            className="mt-2 text-primary-500  hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center gap-1"
                         >
                             {expanded ? "Leer menos" : "Leer más"}
                             <ChevronDown className={`h-4 w-4 transition-transform ${expanded ? "rotate-180" : ""}`} />

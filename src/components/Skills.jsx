@@ -21,31 +21,31 @@ export function Skills() {
             name: "Frontend",
             icon: <Layout className="h-6 w-6" />,
             color: "from-blue-500 to-blue-600",
-            items: ["JavaScript", "React.js", "HTML & CSS", "Tailwind CSS", "UI/UX"],
+            items: ["React.js", "Next.js", "HTML & CSS", "Tailwind CSS","Shadcn/ui", "UI/UX"],
         },
         {
             name: "Backend",
             icon: <Server className="h-6 w-6" />,
             color: "from-green-500 to-green-600",
-            items: ["Express.js", "RESTful APIs", "Node.js"],
+            items: ["Express.js", "RESTful APIs", "Node.js", "Nest.js", "Supabase", "JWT", "Prisma"],
         },
         {
             name: "Mobile",
             icon: <Smartphone className="h-6 w-6" />,
             color: "from-purple-500 to-purple-600",
-            items: ["React Native"],
+            items: ["React Native", "Expo"],
         },
         {
             name: "Bases de Datos",
             icon: <Database className="h-6 w-6" />,
             color: "from-orange-500 to-orange-600",
-            items: ["MySQL", "MongoDB"],
+            items: ["MySQL", "MongoDB", "PostgreSQL", "SQLserver"],
         },
         {
             name: "Herramientas",
             icon: <GitBranch className="h-6 w-6" />,
             color: "from-red-500 to-red-600",
-            items: ["Git", "GitHub"],
+            items: ["Git", "GitHub","Github Actions"],
         },
         {
             name: "Diseño",
@@ -57,7 +57,7 @@ export function Skills() {
             name: "Análisis de Datos",
             icon: <LineChart className="h-6 w-6" />,
             color: "from-cyan-500 to-cyan-600",
-            items: ["PowerBI"],
+            items: ["PowerBI", "Excel", "SQL"],
         },
         {
             name: "Lenguajes",
@@ -69,7 +69,7 @@ export function Skills() {
             name: "Programación",
             icon: <Code2 className="h-6 w-6" />,
             color: "from-indigo-500 to-indigo-600",
-            items: ["JavaScript"],
+            items: ["JavaScript", "TypeScript", "Java"],
         },
     ]
 
