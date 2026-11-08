@@ -1,12 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
 
 export function Footer() {
   const [time, setTime] = useState("")
-  const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
     const updateTime = () => {
@@ -25,47 +23,37 @@ export function Footer() {
 
   return (
     <footer id="contact" className="relative">
-      {/* Main CTA */}
-      <motion.a
-        href="mailto:flores.anthony.489@gmail.com"
-        data-cursor-hover
-        className="relative block overflow-hidden"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {/* Background Curtain */}
-        <motion.div
-          className="absolute inset-0 bg-[#2563eb]"
-          initial={{ y: "100%" }}
-          animate={{ y: isHovered ? "0%" : "100%" }}
-          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-        />
-
-        {/* Content */}
-        <div className="relative py-16 md:py-24 px-8 md:px-12 border-t border-white/10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <motion.h2
-              className="font-sans text-4xl md:text-6xl lg:text-8xl font-light tracking-tight text-center md:text-left"
-              animate={{
-                color: isHovered ? "#050505" : "#fafafa",
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              Hagamos <span className="italic">algo grande</span>
-            </motion.h2>
-
-            <motion.div
-              animate={{
-                rotate: isHovered ? 45 : 0,
-                color: isHovered ? "#050505" : "#fafafa",
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              <ArrowUpRight className="w-12 h-12 md:w-16 md:h-16" />
-            </motion.div>
+      <div className="py-16 md:py-24 px-8 md:px-12 border-t border-white/10">
+        <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-8">06 — CONTACTO</p>
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+          <div>
+            <h2 className="font-sans text-4xl md:text-6xl font-light tracking-tight">
+              Jesús <span className="italic">Flores</span>
+            </h2>
+            <p className="font-mono text-xs tracking-widest text-muted-foreground mt-6">SOFTWARE DEVELOPER · LIMA, PERÚ</p>
           </div>
+
+          <address className="not-italic min-w-0">
+            {[
+              { label: "CORREO", value: "flores.anthony.489@gmail.com", href: "mailto:flores.anthony.489@gmail.com" },
+              { label: "TELÉFONO", value: "+51 986 132 628", href: "tel:+51986132628" },
+            ].map((contact) => (
+              <a
+                key={contact.label}
+                href={contact.href}
+                data-cursor-hover
+                className="group flex items-center justify-between gap-4 border-b border-white/15 py-6 first:pt-0 hover:text-accent transition-colors"
+              >
+                <span className="min-w-0">
+                  <span className="block font-mono text-[10px] tracking-[0.2em] text-muted-foreground mb-3">{contact.label}</span>
+                  <span className="font-mono text-sm md:text-base break-words">{contact.value}</span>
+                </span>
+                <ArrowUpRight aria-hidden="true" className="w-5 h-5 shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </a>
+            ))}
+          </address>
         </div>
-      </motion.a>
+      </div>
 
       {/* Footer Info */}
       <div className="px-8 md:px-12 py-8 border-t border-white/10">

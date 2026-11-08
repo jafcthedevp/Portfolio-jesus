@@ -8,8 +8,8 @@ import { motion, useMotionValue, useSpring } from "framer-motion"
 const projects = [
   { title: "Dllish", year: "MAY — NOV 2026", tags: ["Full Stack", "React Native", "Tiempo real"], image: "/project-dllish.svg", description: "Plataforma web en producción para centralizar productos, pedidos y administración. Aplicación móvil para clientes, permisos por rol, reportes y vista de cocina con pedidos en tiempo real." },
   { title: "Zazu Express", year: "ENE — FEB 2026", tags: ["Odoo", "WhatsApp API", "Integraciones"], image: "/project-zazu.svg", description: "Módulo de Odoo integrado con WhatsApp Business Platform para notificaciones de postventa y seguimiento de pedidos mediante flujos conversacionales." },
-  { title: "Overshark", year: "NOV 2025 — ENE 2026", tags: ["AWS", "Serverless", "OCR"], image: "/project-overshark.svg", description: "Validación de pagos con Lambda, API Gateway, S3, DynamoDB y Textract. Procesamiento de aproximadamente 2,500 comprobantes mensuales y reducción del 93% del tiempo operativo. Dashboard de pagos y aplicación React Native." },
-  { title: "Condorland", year: "AGO — DIC 2024", tags: ["Backend", "Docker", "CI/CD"], image: "/project-condorland.svg", description: "API REST y base de datos para monitoreo de flota en tiempo real. Reducción del 50% de la carga operativa, aplicación en contenedores y flujo de integración y despliegue continuo." },
+  { title: "Overshark", year: "NOV 2025 — ENE 2026", tags: ["AWS Lambda", "API Gateway", "S3", "DynamoDB", "Textract", "Serverless Framework", "WhatsApp API", "React Native"], image: "/project-overshark.svg", description: "Validación de pagos con Lambda, API Gateway, S3, DynamoDB y Textract. Procesamiento de aproximadamente 2,500 comprobantes mensuales y reducción del 93% del tiempo operativo. Dashboard de pagos y aplicación React Native." },
+  { title: "Condorland", year: "AGO — DIC 2024", tags: ["JavaScript", "Node.js", "Express.js", "MySQL", "Docker", "Git", "CI/CD"], image: "/project-condorland.svg", description: "API REST y base de datos para monitoreo de flota en tiempo real. Reducción del 50% de la carga operativa, aplicación en contenedores y flujo de integración y despliegue continuo." },
 ]
 
 export function Works() {
@@ -61,10 +61,10 @@ export function Works() {
             <button
               type="button" aria-expanded={expandedIndex === index} aria-controls={`details-${index}`} onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
               data-cursor-hover
-              className="group w-full text-left flex flex-col md:flex-row md:items-center justify-between gap-4"
+              className="group w-full text-left flex flex-col xl:flex-row xl:items-center justify-between gap-4"
             >
               {/* Year */}
-              <span className="font-mono text-xs text-muted-foreground tracking-widest order-1 md:order-none">
+              <span className="font-mono text-xs text-muted-foreground tracking-widest order-1 xl:order-none">
                 {project.year}
               </span>
 
@@ -80,7 +80,7 @@ export function Works() {
               </motion.h3>
 
               {/* Tags */}
-              <div className="flex gap-2 flex-wrap order-2 md:order-none">
+              <div className="flex gap-2 flex-wrap order-2 xl:order-none xl:max-w-[42%] xl:justify-end">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}

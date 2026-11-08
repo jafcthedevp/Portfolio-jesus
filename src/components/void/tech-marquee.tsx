@@ -1,91 +1,63 @@
-"use client"
-
-import { motion } from "framer-motion"
-
 const techItems = [
   "NEXT.JS",
   "REACT",
   "TYPESCRIPT",
+  "JAVASCRIPT",
   "PYTHON",
   "AWS",
   "POSTGRESQL",
+  "MYSQL",
   "DYNAMODB",
   "NEST.JS",
   "REACT NATIVE",
   "DOCKER",
   "NODE.JS",
+  "EXPRESS.JS",
   "SUPABASE",
 ]
 
-const concepts = [
-  "ARCHITECTURE",
-  "SYSTEMS",
-  "INTERFACES",
-  "ALGORITHMS",
-  "EMERGENCE",
-  "COGNITION",
-  "SYNTHESIS",
-  "VELOCITY",
-  "ENTROPY",
-  "FLUX",
-  "AXIOM",
-  "TENSOR",
+const tools = [
+  "AWS LAMBDA",
+  "API GATEWAY",
+  "S3",
+  "TEXTRACT",
+  "IAM",
+  "SECRETS MANAGER",
+  "SERVERLESS FRAMEWORK",
+  "ODOO",
+  "WHATSAPP API",
+  "CLAUDE API",
+  "GIT",
+  "SWAGGER",
+  "VITEST",
+  "PLAYWRIGHT",
 ]
 
-function MarqueeRow({ items, direction = "left" }: { items: string[]; direction?: "left" | "right" }) {
-  const duplicatedItems = [...items, ...items, ...items, ...items]
-
+function TechnologyList({ label, items }: { label: string; items: string[] }) {
   return (
-    <div className="relative overflow-hidden py-4">
-      <motion.div
-        className={`flex gap-8 ${direction === "left" ? "animate-marquee-left" : "animate-marquee-right"}`}
-        style={{ width: "fit-content" }}
-      >
-        {duplicatedItems.map((item, index) => (
-          <span
-            key={index}
-            className="group font-sans text-5xl md:text-7xl lg:text-8xl font-light tracking-tight whitespace-nowrap cursor-default"
-            style={{
-              WebkitTextStroke: "1px rgba(255,255,255,0.3)",
-              color: "transparent",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "white"
-              e.currentTarget.style.webkitTextStroke = "none"
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "transparent"
-              e.currentTarget.style.webkitTextStroke = "1px rgba(255,255,255,0.3)"
-            }}
+    <div className="border-t border-white/10 pt-8">
+      <h3 className="font-mono text-xs tracking-widest text-muted-foreground mb-6">{label}</h3>
+      <ul className="flex flex-wrap gap-x-8 gap-y-4">
+        {items.map((item) => (
+          <li
+            key={item}
+            className="technology-glow cursor-default font-sans text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white/85"
           >
             {item}
-            <span className="mx-8 text-white/20">•</span>
-          </span>
+          </li>
         ))}
-      </motion.div>
+      </ul>
     </div>
   )
 }
 
 export function TechMarquee() {
   return (
-    <section className="relative py-24 overflow-hidden md:py-32">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="px-8 md:px-12 mb-16"
-      >
-        <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">05 — TECHNICAL ARSENAL</p>
-      </motion.div>
-
-      {/* Marquee Rows */}
-      <div className="space-y-4">
-        <MarqueeRow items={techItems} direction="left" />
-        <MarqueeRow items={concepts} direction="right" />
+    <section className="relative py-24 px-8 md:px-12 md:py-32" aria-labelledby="technical-arsenal-title">
+      <h2 id="technical-arsenal-title" className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-12">05 — TECHNICAL ARSENAL</h2>
+      <div className="space-y-12">
+        <TechnologyList label="DESARROLLO Y DATOS" items={techItems} />
+        <TechnologyList label="CLOUD, INTEGRACIONES Y CALIDAD" items={tools} />
       </div>
     </section>
   )
