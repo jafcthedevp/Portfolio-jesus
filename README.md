@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Jesús Flores · Portfolio
 
-## Getting Started
+Next.js, React y TypeScript. Diseño adaptado del [Brutalist Void Portfolio Template de rajoninternet](https://v0.app/templates/brutalist-void-portfolio-template-0brPGNpjNkt): Playfair Display, Geist Mono, esfera WebGL, Framer Motion, Lenis y galería editorial.
 
-First, run the development server:
+Contenido y PDF actualizados con el CV de Jesús Flores. Las imágenes de la galería son diagramas conceptuales de arquitectura, no capturas de productos de clientes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
+## Desarrollo
+
+Node.js 20.19 o superior y pnpm.
+
+```sh
+pnpm install --frozen-lockfile
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir http://localhost:3000.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```sh
+pnpm typecheck
+pnpm build
+pnpm start
+pnpm audit
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Estructura
 
-## Learn More
+- `src/components/void/`: diseño adaptado de v0.
+- `src/app/page.tsx`: composición principal.
+- `src/app/globals.css`: tema Tailwind CSS 4.
+- `public/CVJesusFlores.pdf`: CV actualizado.
+- `public/project-*.svg`: diagramas conceptuales de cada experiencia.
 
-To learn more about Next.js, take a look at the following resources:
+## Seguridad
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Se usa pnpm y su lockfile. Se actualizaron Next.js, React y Sharp. `pnpm-workspace.yaml` fija versiones corregidas de PostCSS y minimatch y permite únicamente el script de instalación revisado de Sharp. Se retiraron imagemin e imagemin-webp porque el convertidor existente usa Sharp.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Última auditoría: 0 vulnerabilidades conocidas. Repetir `pnpm audit` al actualizar dependencias.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+El sitio incluye navegación móvil, foco visible, alternativa si falla WebGL y ajustes para movimiento reducido y pantallas táctiles.
