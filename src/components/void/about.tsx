@@ -36,7 +36,7 @@ export function About() {
       </motion.div>
 
       <div className="px-8 md:px-12 max-w-4xl pb-16 font-mono text-sm md:text-base leading-relaxed text-muted-foreground">
-        <p>Desarrollador de software con experiencia freelance desde el análisis de necesidades hasta la puesta en producción de aplicaciones web e integraciones. Automatizo procesos de pedidos, pagos y postventa con TypeScript, Node.js y AWS.</p>
+        <p>Desarrollador de software con experiencia freelance en el ciclo completo de desarrollo, desde la toma de requerimientos hasta el despliegue en producción de integraciones, aplicaciones web y moviles . Especializado en la automatización, diseño de sistemas, arquitectura de software con TypeScript, Node.js y servicios de AWS</p>
         <p className="mt-6 text-xs">SENATI · Desarrollo de Software · 2021–2024<br />Español nativo · Inglés B1 · Preparación AWS Solutions Architect Associate</p>
         <a className="inline-block mt-8 border-b border-white/40 pb-2 text-foreground" href="/CVJesusFlores.pdf" download>Descargar CV ↗</a>
       </div>
